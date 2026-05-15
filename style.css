@@ -1,0 +1,400 @@
+/* Roam Live website
+ * Brand tokens (3): Ink #0A0A0A, Paper #F6F4EE, Live #FF2D2D.
+ */
+
+:root {
+  --ink: #0A0A0A;
+  --paper: #F6F4EE;
+  --live: #FF2D2D;
+  --muted: rgba(246, 244, 238, 0.62);
+  --dim: rgba(246, 244, 238, 0.42);
+  --line: rgba(246, 244, 238, 0.09);
+  --surface: rgba(246, 244, 238, 0.04);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  color-scheme: dark;
+}
+
+body {
+  background: var(--ink);
+  color: var(--paper);
+  font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Roboto, system-ui, sans-serif;
+  font-size: 17px;
+  line-height: 1.62;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 4.5rem 1.5rem 3rem;
+  flex: 1;
+}
+
+a {
+  color: var(--paper);
+  text-decoration: underline;
+  text-decoration-color: var(--dim);
+  text-underline-offset: 3px;
+  transition: text-decoration-color 0.15s, color 0.15s;
+}
+
+a:hover {
+  text-decoration-color: var(--live);
+  color: var(--paper);
+}
+
+::selection {
+  background: var(--live);
+  color: var(--paper);
+}
+
+/* ---- Hero ---- */
+
+.hero {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.hero .wordmark {
+  display: block;
+  margin: 0 auto 1.5rem;
+  max-width: 420px;
+  width: 80%;
+  height: auto;
+}
+
+.hero .tagline {
+  font-size: 1.125rem;
+  color: var(--muted);
+  margin-bottom: 2.5rem;
+  max-width: 32ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.download {
+  display: inline-block;
+  background: var(--live);
+  color: var(--paper);
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.01em;
+  padding: 0.95rem 1.75rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: filter 0.15s, transform 0.05s;
+}
+
+.download:hover {
+  filter: brightness(1.08);
+  text-decoration: none;
+}
+
+.download:active {
+  transform: translateY(1px);
+}
+
+.android-only {
+  font-size: 0.875rem;
+  color: var(--dim);
+  margin-top: 0.85rem;
+  font-style: italic;
+}
+
+/* ---- Sections ---- */
+
+section + section {
+  margin-top: 2.5rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--line);
+}
+
+section h2 {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--live);
+  margin-bottom: 1.5rem;
+}
+
+section p {
+  margin-bottom: 1rem;
+  max-width: 60ch;
+}
+
+section p:last-child {
+  margin-bottom: 0;
+}
+
+/* ---- Feature list ---- */
+
+ul.features {
+  list-style: none;
+  margin-top: 1.25rem;
+}
+
+ul.features li {
+  padding: 0.6rem 0 1.4rem;
+}
+
+ul.features li:first-child {
+  padding-top: 0;
+}
+
+ul.features li:last-child {
+  padding-bottom: 0;
+}
+
+ul.features h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+
+ul.features p {
+  color: var(--muted);
+  font-size: 0.97rem;
+  margin: 0;
+  max-width: 60ch;
+}
+
+/* ---- Privacy ---- */
+
+ul.privacy {
+  list-style: none;
+  margin-top: 0.5rem;
+}
+
+ul.privacy li {
+  padding: 0.55rem 0;
+  color: var(--paper);
+}
+
+ul.privacy li::before {
+  content: "•";
+  color: var(--live);
+  display: inline-block;
+  width: 1.5rem;
+  font-weight: 600;
+}
+
+/* ---- Install ---- */
+
+ol.install {
+  margin-top: 0.5rem;
+  margin-left: 1.5rem;
+  color: var(--muted);
+}
+
+ol.install li {
+  padding: 0.4rem 0;
+}
+
+ol.install li::marker {
+  color: var(--live);
+  font-weight: 700;
+}
+
+ol.install li strong {
+  color: var(--paper);
+  font-weight: 600;
+}
+
+/* ---- Support CTA on home ---- */
+
+.support-cta a.button {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.7rem 1.3rem;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  text-decoration: none;
+  color: var(--paper);
+  font-size: 0.95rem;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.support-cta a.button:hover {
+  border-color: var(--live);
+  background: rgba(255, 45, 45, 0.06);
+}
+
+/* ---- Footer ---- */
+
+footer {
+  max-width: 720px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem;
+  border-top: 1px solid var(--line);
+  color: var(--dim);
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+footer a {
+  color: var(--muted);
+}
+
+footer .footer-row {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+footer .version {
+  font-family: ui-monospace, 'JetBrains Mono', 'SF Mono', Menlo, monospace;
+  font-size: 0.8rem;
+}
+
+/* ---- Support page ---- */
+
+.support-page main {
+  max-width: 580px;
+}
+
+.support-page h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.support-page .lede {
+  text-align: center;
+  color: var(--muted);
+  margin-bottom: 3rem;
+}
+
+.method {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.method h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 0.85rem;
+}
+
+.method .stripe-embed {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+
+.method .qr-code {
+  display: block;
+  width: 144px;
+  height: 144px;
+  margin: 0.75rem auto;
+  padding: 8px;
+  background: var(--paper);
+  border-radius: 6px;
+}
+
+.wallet-row {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.wallet {
+  font-family: ui-monospace, 'JetBrains Mono', 'SF Mono', Menlo, monospace;
+  font-size: 0.82rem;
+  background: var(--ink);
+  padding: 0.7rem 0.85rem;
+  border-radius: 6px;
+  word-break: break-all;
+  color: var(--paper);
+  border: 1px solid var(--line);
+  flex: 1;
+  min-width: 0;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.wallet:hover {
+  border-color: var(--live);
+}
+
+.copy-btn {
+  border: 1px solid var(--line);
+  background: var(--ink);
+  color: var(--paper);
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 0 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+  white-space: nowrap;
+}
+
+.copy-btn:hover {
+  background: var(--live);
+  border-color: var(--live);
+}
+
+.copy-btn.copied {
+  background: var(--paper);
+  color: var(--ink);
+  border-color: var(--paper);
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 2rem;
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.back-link:hover {
+  color: var(--live);
+}
+
+/* ---- Mobile ---- */
+
+@media (max-width: 480px) {
+  body {
+    font-size: 16px;
+  }
+  main {
+    padding: 2.5rem 1.25rem 2rem;
+  }
+  .hero {
+    margin-bottom: 3rem;
+  }
+  .hero .wordmark {
+    width: 90%;
+  }
+  section + section {
+    margin-top: 2.5rem;
+    padding-top: 2.5rem;
+  }
+  .download {
+    width: 100%;
+  }
+}

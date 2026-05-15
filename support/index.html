@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en" class="support-page">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Support Me</title>
+  <meta name="description" content="Your support is what encourages me to keep working on projects like this.">
+  <meta name="theme-color" content="#0A0A0A">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+
+  <meta property="og:title" content="Support Me">
+  <meta property="og:description" content="Your support is what encourages me to keep working on projects like this.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://roamlive.app/support/">
+
+  <link rel="stylesheet" href="/style.css">
+  <script async src="https://js.stripe.com/v3/buy-button.js"></script>
+</head>
+<body>
+<main>
+
+  <a class="back-link" href="/">&larr; roamlive.app</a>
+
+  <h1>Support Me</h1>
+
+  <section>
+    <p>I love making apps that align with my ethos and which deliver a great user experience. I would love to spend more time on this but I can&rsquo;t at the moment because well I need money for rent and food.</p>
+    <p>So every bit you give is genuinely appreciated and it signals to me that I&rsquo;m heading in the right direction and making something that people genuinely enjoy using. So if Roam Live has saved you a subscription to another paid app or has been a time saver and made your life easier then I truly appreciate anything you can give.</p>
+  </section>
+
+  <section style="margin-top: 2.5rem; padding-top: 2.5rem; border-top: 1px solid var(--line);">
+    <h2>Ways to give</h2>
+
+    <div class="method">
+      <h3>Card</h3>
+      <div class="stripe-embed">
+        <stripe-buy-button
+          buy-button-id="buy_btn_1TSV9CIAIW55pZ9jhNWrXyGf"
+          publishable-key="pk_live_51HPfryIAIW55pZ9jOChqWd0Uo1y4TtJ7lZ4z6zNmjfmEEc89g56hh9ynJ8SljcPn9ssuTEjc3iUf2M6MQbccH32H005KJmiigf">
+        </stripe-buy-button>
+      </div>
+    </div>
+
+    <div class="method">
+      <h3>Bitcoin</h3>
+      <img class="qr-code" src="/assets/bitcoin-qr.png" alt="Bitcoin donation address QR code" width="144" height="144">
+      <div class="wallet-row">
+        <a class="wallet" href="bitcoin:bc1qguacmck698kfne0h92mzpu9rzppdw4nnugxn36">bc1qguacmck698kfne0h92mzpu9rzppdw4nnugxn36</a>
+        <button class="copy-btn" type="button" data-copy="bc1qguacmck698kfne0h92mzpu9rzppdw4nnugxn36">Copy</button>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-row">
+    <a href="https://github.com/whitspce/roamlive">Source on GitHub</a>
+    <a href="https://www.gnu.org/licenses/gpl-3.0.en.html">GPL&#8209;3.0</a>
+    <a href="/">roamlive.app</a>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.copy-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const text = btn.dataset.copy;
+      navigator.clipboard.writeText(text).then(() => {
+        const original = btn.textContent;
+        btn.textContent = 'Copied';
+        btn.classList.add('copied');
+        setTimeout(() => {
+          btn.textContent = original;
+          btn.classList.remove('copied');
+        }, 1800);
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
