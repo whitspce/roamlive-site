@@ -123,6 +123,24 @@ section + section {
   border-top: 1px solid var(--line);
 }
 
+/* ---- Alpha notice ---- */
+
+section.alpha-notice {
+  margin-top: 2rem;
+  padding: 1.5rem 1.4rem;
+  background: rgba(255, 45, 45, 0.05);
+  border: 1px solid rgba(255, 45, 45, 0.22);
+  border-radius: 10px;
+}
+
+.alpha-notice h2 {
+  margin-bottom: 1rem;
+}
+
+.alpha-notice p {
+  max-width: none;
+}
+
 section h2 {
   font-size: 0.78rem;
   font-weight: 700;
