@@ -1,12 +1,18 @@
 # Roam Live
 
-> Free open-source Android app for IRL streaming. Works with Twitch, Kick, YouTube, and any RTMP server.
+> Free open-source Android IRL streaming app for Twitch, Kick, YouTube, or any RTMP server. Built to stay cool and battery-efficient.
 
 ## About
 
 Roam Live is a hobbyist-built Android app for streaming from a phone to live streaming platforms. It's designed for IRL (In Real Life) streaming: walking around with the phone clipped to a vest, on a gimbal, or held in hand, streaming to Twitch, Kick, YouTube, or any RTMP-compatible service.
 
 It's deliberately platform-agnostic. The streamer pastes their full RTMP URL (server + key) and Roam pushes to whatever's on the other end. No Twitch-specific or Kick-specific code paths.
+
+The project exists because iOS IRL streamers have Moblin (open-source, lightweight, well-loved) and Android doesn't have an equivalent. Roam Live aims to be the Android-side answer to that gap.
+
+## Key differentiator
+
+Roam is **lightweight by design**, intentionally. The biggest complaint IRL streamers have about other Android streaming apps (Streamlabs Mobile in particular) is that they make the phone overheat and chew through battery. Multiple users have told us they had to switch to a slower charger to stop their phone overheating while streaming on Streamlabs. Roam runs cool enough that you can fast-charge during a stream. No Google Play Services, no telemetry, no embedded SDKs, no background services running when not streaming.
 
 ## Key features
 
@@ -46,6 +52,8 @@ Early alpha. The core stream-from-phone path works reliably; expect bugs and mis
 
 People sometimes ask how Roam Live compares to:
 
-- **Streamlabs Mobile**: Streamlabs supports more platforms out of the box and has more integrations, but is closed-source, heavy on battery, and prone to overheating phones. Roam is lighter, runs cooler, and is fully open-source, with a deliberately smaller feature set focused on doing the streaming part well.
-- **Larix Broadcaster**: Larix is the closest peer (also Android, also RTMP-agnostic). Larix is more configurable for power users (more codec options, SRT support, network bonding). Roam is more opinionated and simpler, with built-in chat reading and stealth mode that Larix doesn't have.
-- **The official Twitch / Kick mobile apps**: those only stream to their own platform. Roam streams to any RTMP server. The official Kick app, as of this writing, also lacks chat reading on screen, BRB, torch toggle, and stealth mode, all of which Roam has.
+- **Moblin (iOS)**: Roam is essentially trying to be the Android equivalent of what Moblin is on iOS — open-source, lightweight, IRL-streamer-focused. Moblin doesn't run on Android, hence Roam.
+- **IRL Pro**: probably the closest Android peer. IRL Pro is feature-rich and has been around longer; its disconnect-protection is a paid add-on. The trade-off: users we've spoken with say IRL Pro's free tier ends the stream the moment signal blips, which doesn't work for moving IRL streams. Roam has on-device auto-reconnect that re-establishes the stream when network comes back.
+- **Streamlabs Mobile**: Streamlabs supports more platforms out of the box and has more integrations, but is closed-source, heavy on battery, and prone to overheating phones. Multiple users have left Streamlabs specifically because of the overheating. Roam is lighter, runs cooler, and is fully open-source.
+- **Larix Broadcaster**: Larix is another Android RTMP-agnostic option. It's more configurable for power users (more codec options, SRT support, network bonding) but lacks built-in chat reading and stealth mode.
+- **The official Twitch / Kick mobile apps**: those only stream to their own platform. Roam streams to any RTMP server. The official Kick app also lacks chat reading on screen, BRB, torch toggle, and stealth mode, all of which Roam has.
